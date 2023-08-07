@@ -91,7 +91,7 @@ bool ListHeadInsert(List* list, float data) { return ListNextInsert(list->head, 
 bool ListTailInsert(List* list, float data) { return ListPrevInsert(list->tail, data); };
 
 bool ListHeadDelete(List* list, float* data) { return ListNextDelete(list->head, data); };
-bool ListTailDelete(List* list, float* data) { return ListNextDelete(list->tail, data); };
+bool ListTailDelete(List* list, float* data) { return ListPrevDelete(list->tail, data); };
 
 bool FindInList(const List* list, float data, const ListTravelMode travel_mode)
 {
