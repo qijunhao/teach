@@ -18,15 +18,15 @@ typedef struct ListNode
 typedef struct List
 {
     ListNode *head, *tail;
-    int dataCount;
 } List;
 
 List *InitList(void);
 
-bool ListPrevInsert(ListNode *listndoe, float data);
-bool ListNextInsert(ListNode *listndoe, float data);
-bool ListPrevDelete(ListNode *listndoe, float *data);
-bool ListPrevDelete(ListNode *listndoe, float *data);
+bool ListPrevInsert(ListNode *listnode, float data);
+bool ListNextInsert(ListNode *listnode, float data);
+
+bool ListPrevDelete(ListNode *listnode, float *data);
+bool ListNextDelete(ListNode *listnode, float *data);
 
 bool ListHeadInsert(List *list, float data);
 bool ListTailInsert(List *list, float data);
@@ -34,6 +34,6 @@ bool ListTailInsert(List *list, float data);
 bool ListHeadDelete(List *list, float *data);
 bool ListTailDelete(List *list, float *data);
 
-bool FindInList(const List *list, float data);
+bool FindInList(const List *list, float data, const ListTravelMode travel_mode);
 
 void TravelList(const List *list, void (*func)(float), const ListTravelMode travel_mode);
