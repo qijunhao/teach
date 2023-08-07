@@ -1,0 +1,10 @@
+﻿cmake_minimum_required(VERSION 3.23)
+
+include_directories(.)
+
+project(Mainc)
+# add_executable(Mianc src/main.c src/queue.c src/stack.c src/list.c src/bezier.c src/myMath.c)
+
+aux_source_directory(./src DIR_SRCS)
+
+add_executable(Mainc ${DIR_SRCS})
