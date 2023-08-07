@@ -5,7 +5,6 @@
 typedef struct HashMap {
 	List*  list;
 	size_t nodeNumber;
-	size_t (*HashNode)(const int key);
 } HashMap;
 
 HashMap* InitHashMap(const size_t node_number);
