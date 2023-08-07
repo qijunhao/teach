@@ -16,20 +16,20 @@ size_t HashNode(HashMap* hashmap, const int key) { return (key % (hashmap->nodeN
 
 HashMap* InitHashMap(const size_t node_number)
 {
-	HashMap* hasmap = (HashMap*) malloc(sizeof(HashMap));
-	if (!hasmap)
+	HashMap* hashmap = (HashMap*) malloc(sizeof(HashMap));
+	if (!hashmap)
 		return NULL;
 
-	hasmap->list = (List*) malloc(sizeof(List) * node_number);
+	hashmap->list = (List*) malloc(sizeof(List) * node_number);
 
-	if (!hasmap->list) {
-		free(hasmap);
+	if (!hashmap->list) {
+		free(hashmap);
 		return NULL;
 	}
 
-	for (size_t i = 0; i < node_number; i++) hasmap->list[i] = *InitList();
+	for (size_t i = 0; i < node_number; i++) hashmap->list[i] = *InitList();
 
-	hasmap->nodeNumber = node_number;
+	hashmap->nodeNumber = node_number;
 
-	return hasmap;
+	return hashmap;
 }
