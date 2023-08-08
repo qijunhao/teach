@@ -12,7 +12,8 @@ typedef enum {
 
 typedef void (*EventCallback)(va_list);
 
-void RegisterEvent(EventType type, EventCallback callback);
-void DispatchEvent(EventType type, ...);
+// 单播回调
+void EventAddListenerSingle(EventType type, EventCallback callback);
+void EventBoradcastSingle(EventType type, ...);
 
 void EventExample();

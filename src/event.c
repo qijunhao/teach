@@ -2,9 +2,9 @@
 
 EventCallback g_eventCallbacks[EVENT_COUNT] = {0};
 
-void RegisterEvent(EventType type, EventCallback callback) { g_eventCallbacks[type] = callback; }
+void EventAddListenerSingle(EventType type, EventCallback callback) { g_eventCallbacks[type] = callback; }
 
-void DispatchEvent(EventType type, ...)
+void EventBoradcastSingle(EventType type, ...)
 {
 	if (type < EVENT_COUNT && g_eventCallbacks[type]) {
 		va_list args;
@@ -31,10 +31,10 @@ void OnEventB(va_list args)
 void EventExample()
 {
 	// Register event callbacks
-	RegisterEvent(EVENT_A, OnEventA);
-	RegisterEvent(EVENT_B, OnEventB);
+	EventAddListenerSingle(EVENT_A, OnEventA);
+	EventAddListenerSingle(EVENT_B, OnEventB);
 
 	// Dispatch events
-	DispatchEvent(EVENT_A, 42, "Hello from Event A");
-	DispatchEvent(EVENT_B, 3.14f, "Hello from Event B");
+	EventBoradcastSingle(EVENT_A, 42, "Hello from Event A");
+	EventBoradcastSingle(EVENT_B, 3.14f, "Hello from Event B");
 }
