@@ -16,8 +16,8 @@ int main()
 	EventAddListener(EVENT_B, Func5);
 	EventAddListener(EVENT_A, Func6);
 
-	EventBoradcast(EVENT_A, 1.2345678, "data from EVENT_A");
-	EventBoradcast(EVENT_B, 8.7654321, "data from EVENT_B", "jiejiejie");
+	EventBroadcast(EVENT_A, 1.2345678, "data from EVENT_A");
+	EventBroadcast(EVENT_B, 8.7654321, "data from EVENT_B", "jiejiejie");
 
 	return 0;
 };

@@ -4,7 +4,7 @@ EventCallback g_eventCallbacks[EVENT_COUNT] = {0};
 
 void EventAddListenerSingle(EventType type, EventCallback callback) { g_eventCallbacks[type] = callback; }
 
-void EventBoradcastSingle(EventType type, ...)
+void EventBroadcastSingle(EventType type, ...)
 {
 	if (type < EVENT_COUNT && g_eventCallbacks[type]) {
 		va_list args;
@@ -35,6 +35,6 @@ void EventExample()
 	EventAddListenerSingle(EVENT_B, OnEventB);
 
 	// Dispatch events
-	EventBoradcastSingle(EVENT_A, 42, "Hello from Event A");
-	EventBoradcastSingle(EVENT_B, 3.14f, "Hello from Event B");
+	EventBroadcastSingle(EVENT_A, 42, "Hello from Event A");
+	EventBroadcastSingle(EVENT_B, 3.14f, "Hello from Event B");
 }

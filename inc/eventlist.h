@@ -5,4 +5,4 @@
 
 // 多播回调
 bool EventAddListener(EventType event_type, EventCallback callback);
-void EventBoradcast(EventType event_type, ...);
+void EventBroadcast(EventType event_type, ...);

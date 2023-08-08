@@ -14,6 +14,6 @@ typedef void (*EventCallback)(va_list);
 
 // 单播回调
 void EventAddListenerSingle(EventType type, EventCallback callback);
-void EventBoradcastSingle(EventType type, ...);
+void EventBroadcastSingle(EventType type, ...);
 
 void EventExample();

@@ -27,7 +27,7 @@ bool EventAddListener(EventType event_type, EventCallback callback)
 	return true;
 }
 
-void EventBoradcast(EventType event_type, ...)
+void EventBroadcast(EventType event_type, ...)
 {
 	if ((event_type >= EVENT_COUNT) || (!g_eventGroup.eventList[event_type].next))
 		return;
