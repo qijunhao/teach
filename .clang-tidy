@@ -65,7 +65,6 @@
     bugprone-fold-init-type,
     bugprone-inaccurate-erase,
     bugprone-incorrect-roundings,
-    bugprone-infinite-loop,
     bugprone-integer-division,
     bugprone-macro-parentheses,
     bugprone-macro-repeated-side-effects,
@@ -173,7 +172,7 @@ CheckOptions:
   - key: readability-identifier-naming.ProtectedMemberPrefix
     value: ''
   - key: readability-identifier-naming.GlobalVariablePrefix
-    value: g
+    value: g_
   - key: readability-identifier-naming.GlobalConstantCase
     value: UPPER_CASE
   - key: readability-identifier-naming.GlobalConstantPrefix
