@@ -171,8 +171,7 @@ CheckOptions:
     value: ''
   - key: readability-identifier-naming.ProtectedMemberPrefix
     value: ''
-  - key: readability-identifier-naming.GlobalVariablePrefix
-    value: g_
+
   - key: readability-identifier-naming.GlobalConstantCase
     value: UPPER_CASE
   - key: readability-identifier-naming.GlobalConstantPrefix
@@ -203,3 +202,9 @@ CheckOptions:
     value: CamelCase
   - key: readability-identifier-naming.GlobalFunctionCase
     value: CamelCase
+  # - key: readability-identifier-naming.GlobalConstantPointerPrefix
+  #   value: p_
+  # - key: readability-identifier-naming.GlobalPointerPrefix
+  #   value: p_
+  - key: readability-identifier-naming.GlobalVariablePrefix
+    value: g_
