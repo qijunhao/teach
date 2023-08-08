@@ -93,39 +93,39 @@ bool ListTailInsert(List* list, float data) { return ListPrevInsert(list->tail, 
 bool ListHeadDelete(List* list, float* data) { return ListNextDelete(list->head, data); };
 bool ListTailDelete(List* list, float* data) { return ListPrevDelete(list->tail, data); };
 
-bool FindInList(const List* list, float data, const ListTravelMode travel_mode)
+ListNode* FindInList(const List* list, float data, const ListTravelMode travel_mode)
 {
 	if (travel_mode == ListFront2Tail) {
 		ListNode* indexNode = list->head->next;
 		while (indexNode != list->tail) {
 			if (indexNode->data == data)
-				return true;
+				return indexNode;
 			indexNode = indexNode->next;
 		}
 	} else if (travel_mode == ListTail2Front) {
 		ListNode* indexNode = list->tail->prev;
 		while (indexNode != list->head) {
 			if (indexNode->data == data)
-				return true;
+				return indexNode;
 			indexNode = indexNode->prev;
 		}
 	}
-	return false;
+	return NULL;
 };
 
 void TravelList(const List* list, void (*func)(float), const ListTravelMode travel_mode)
 {
 	if (travel_mode == ListFront2Tail) {
-		ListNode* indexNdoe = list->head->next;
-		while (indexNdoe != list->tail) {
-			func(indexNdoe->data);
-			indexNdoe = indexNdoe->next;
+		ListNode* indexNode = list->head->next;
+		while (indexNode != list->tail) {
+			func(indexNode->data);
+			indexNode = indexNode->next;
 		}
 	} else if (travel_mode == ListTail2Front) {
-		ListNode* indexNdoe = list->tail->prev;
-		while (indexNdoe != list->head) {
-			func(indexNdoe->data);
-			indexNdoe = indexNdoe->prev;
+		ListNode* indexNode = list->tail->prev;
+		while (indexNode != list->head) {
+			func(indexNode->data);
+			indexNode = indexNode->prev;
 		}
 	}
 };

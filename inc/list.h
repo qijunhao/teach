@@ -28,6 +28,6 @@ bool ListTailInsert(List* list, float data);
 bool ListHeadDelete(List* list, float* data);
 bool ListTailDelete(List* list, float* data);
 
-bool FindInList(const List* list, float data, const ListTravelMode travel_mode);
+ListNode* FindInList(const List* list, float data, const ListTravelMode travel_mode);
 
 void TravelList(const List* list, void (*func)(float), const ListTravelMode travel_mode);
