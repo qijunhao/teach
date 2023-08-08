@@ -1,7 +1,17 @@
 ﻿#include "inc/eventlist.h"
 
+typedef struct EventListNode {
+	EventCallback		  func;
+	struct EventListNode* next;
+} EventListNode;
+
+typedef struct EventGroup {
+	EventListNode eventList[EVENT_COUNT];
+} EventGroup;
+
 EventGroup g_eventGroup;
-bool	   EventAddListener(EventType event_type, EventCallback callback)
+
+bool EventAddListener(EventType event_type, EventCallback callback)
 {
 	EventListNode* newEvent = (EventListNode*) malloc(sizeof(EventListNode));
 	if (!newEvent)
