@@ -26,7 +26,7 @@ Queue* InitQueue(u8 size)
 bool IfQueueEmpty(const Queue* queue) { return queue->head == queue->rear; };
 bool IfQueueFull(const Queue* queue) { return queue->head == (queue->rear + 1); };
 
-bool EnQueue(Queue* queue, float data)
+bool Enqueue(Queue* queue, float data)
 {
 	if (IfQueueFull(queue))
 		return false;
@@ -35,7 +35,7 @@ bool EnQueue(Queue* queue, float data)
 	queue->rear				   %= queue->size;
 	return true;
 }
-bool DeQueue(Queue* queue, float* data)
+bool Dequeue(Queue* queue, float* data)
 {
 	if (IfQueueEmpty(queue))
 		return false;

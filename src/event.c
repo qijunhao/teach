@@ -1,7 +1,5 @@
 #include "inc/event.h"
 
-#include "stdio.h"
-
 EventCallback g_eventCallbacks[EVENT_COUNT] = {0};
 
 void RegisterEvent(EventType type, EventCallback callback) { g_eventCallbacks[type] = callback; }

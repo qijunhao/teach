@@ -1,5 +1,7 @@
 #pragma once
 
+#include "myMath.h"
+
 #include <stdarg.h>
 
 typedef enum {
@@ -10,7 +12,7 @@ typedef enum {
 
 typedef void (*EventCallback)(va_list);
 
-void register_event(EventType type, EventCallback callback);
+void RegisterEvent(EventType type, EventCallback callback);
 void DispatchEvent(EventType type, ...);
 
 void EventExample();
